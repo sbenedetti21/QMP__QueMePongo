@@ -13,14 +13,13 @@ public class Prenda {
     this.colorPrincipal = colorPrincipal;
   }
 
-  public Categoria identificarCategoria() {
-    return tipoDePrenda.categoria();
+  public Prenda(TipoDePrenda tipoDePrenda, String material, String colorPrincipal, String colorSecundario) {
+    this(tipoDePrenda, material, colorPrincipal);
+    this.colorSecundario = colorSecundario;
   }
 
-  // Esta es la manera que se me ocurrio de añadir un color secundario, aunque podría traer problemas ya que
-  // si no se utilizase, colorSecundario quedaría en null
-  public void setColorSecundario(String colorSecundario) {
-    this.colorSecundario = colorSecundario;
+  public Categoria identificarCategoria() {
+    return tipoDePrenda.categoria();
   }
 
 }
