@@ -6,9 +6,11 @@ package domain.ropa;
 public class TipoDePrenda {
 
   private Categoria categoria;
+  private Trama trama = Trama.LISA;
 
-  public TipoDePrenda(Categoria categoria) {
+  public TipoDePrenda(Categoria categoria, Trama trama) {
     this.categoria = categoria;
+    this.trama = trama;
   }
 
   public Categoria categoria() {
