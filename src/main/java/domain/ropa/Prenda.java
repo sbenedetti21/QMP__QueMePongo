@@ -1,5 +1,7 @@
 package domain.ropa;
 
+import java.util.Objects;
+
 public class Prenda {
 
   private TipoDePrenda tipoDePrenda;
@@ -8,14 +10,14 @@ public class Prenda {
   private String colorSecundario;
 
   public Prenda(TipoDePrenda tipoDePrenda, String material, String colorPrincipal) {
-    this.tipoDePrenda = tipoDePrenda;
-    this.material = material;
-    this.colorPrincipal = colorPrincipal;
+    this.tipoDePrenda = Objects.requireNonNull(tipoDePrenda, "Tipo de prenda NULL");
+    this.material = Objects.requireNonNull(material, "Material NULL");
+    this.colorPrincipal = Objects.requireNonNull(colorPrincipal, "Color Principal NULL");
   }
 
   public Prenda(TipoDePrenda tipoDePrenda, String material, String colorPrincipal, String colorSecundario) {
     this(tipoDePrenda, material, colorPrincipal);
-    this.colorSecundario = colorSecundario;
+    this.colorSecundario = Objects.requireNonNull(colorSecundario, "Color Secundario NULL");
   }
 
   public Categoria identificarCategoria() {
