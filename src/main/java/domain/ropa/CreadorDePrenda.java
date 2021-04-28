@@ -1,5 +1,6 @@
 package domain.ropa;
 
+import java.awt.*;
 import java.util.Objects;
 
 // considero que si en el creador de prenda uno no termina de settear los distintos atributos,
@@ -9,8 +10,8 @@ public class CreadorDePrenda {
 
   private TipoDePrenda tipoDePrenda;
   private String material;
-  private String colorPrincipal;
-  private String colorSecundario;
+  private Color colorPrincipal;
+  private Color colorSecundario;
 
   public void setTipoDePrenda(TipoDePrenda tipoDePrenda) {
     this.tipoDePrenda = tipoDePrenda;
@@ -24,7 +25,7 @@ public class CreadorDePrenda {
     }
   }
 
-  public void setColorPrincipal(String colorPrincipal) {
+  public void setColorPrincipal(Color colorPrincipal) {
     if (this.tipoEstaSeteado()) {
       this.colorPrincipal = colorPrincipal;
     } else {
@@ -32,7 +33,7 @@ public class CreadorDePrenda {
     }
   }
 
-  public void setColorSecundario(String colorSecundario) {
+  public void setColorSecundario(Color colorSecundario) {
     if (this.tipoEstaSeteado()) {
       this.colorSecundario = colorSecundario;
     } else {
