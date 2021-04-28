@@ -11,3 +11,9 @@ public class Atuendo {
     Collections.addAll(this.prendas, prendas);
   }
 }
+
+/*
+Considero que los uniformes podrian ser instancias de una clase Uniforme que herede de Atuendo,
+pero teniendo un atributo de nombre y que al inicializar un objeto tenga que si o si asignarse una prenda
+superior, inferior y calzado
+ */
