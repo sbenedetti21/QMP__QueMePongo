@@ -1,24 +1,24 @@
 package domain.ropa;
 
 import java.awt.*;
-import java.util.Objects;
+import static java.util.Objects.requireNonNull;
 
 public class Prenda {
 
   private TipoDePrenda tipoDePrenda;
-  private String material;
+  private Material material;
   private Color colorPrincipal;
   private Color colorSecundario;
 
-  public Prenda(TipoDePrenda tipoDePrenda, String material, Color colorPrincipal) {
-    this.tipoDePrenda = Objects.requireNonNull(tipoDePrenda, "Tipo de prenda NULL");
-    this.material = Objects.requireNonNull(material, "Material NULL");
-    this.colorPrincipal = Objects.requireNonNull(colorPrincipal, "Color Principal NULL");
+  public Prenda(TipoDePrenda tipoDePrenda, Material material, Color colorPrincipal) {
+    this.tipoDePrenda = requireNonNull(tipoDePrenda, "Tipo de prenda NULL");
+    this.material = requireNonNull(material, "Material NULL");
+    this.colorPrincipal = requireNonNull(colorPrincipal, "Color Principal NULL");
   }
 
-  public Prenda(TipoDePrenda tipoDePrenda, String material, Color colorPrincipal, Color colorSecundario) {
+  public Prenda(TipoDePrenda tipoDePrenda, Material material, Color colorPrincipal, Color colorSecundario) {
     this(tipoDePrenda, material, colorPrincipal);
-    this.colorSecundario = Objects.requireNonNull(colorSecundario, "Color Secundario NULL");
+    this.colorSecundario = requireNonNull(colorSecundario, "Color Secundario NULL");
   }
 
   public Categoria identificarCategoria() {

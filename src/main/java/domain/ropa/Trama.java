@@ -5,5 +5,5 @@ public enum Trama {
   RAYADA,
   CON_LUNARES,
   A_CUADROS,
-  ESTAMPADA
+  ESTAMPADO
 }

@@ -9,7 +9,7 @@ import java.util.Objects;
 public class CreadorDePrenda {
 
   private TipoDePrenda tipoDePrenda;
-  private String material;
+  private Material material;
   private Color colorPrincipal;
   private Color colorSecundario;
 
@@ -17,7 +17,7 @@ public class CreadorDePrenda {
     this.tipoDePrenda = tipoDePrenda;
   }
 
-  public void setMaterial(String material) {
+  public void setMaterial(Material material) {
     if (this.tipoEstaSeteado()) {
       this.material = material;
     } else {
@@ -42,10 +42,10 @@ public class CreadorDePrenda {
   }
 
   public Prenda generarPrenda() {
-    if (colorSecundario == null) {
-      return new Prenda(tipoDePrenda, material, colorPrincipal);
+    if (this.colorSecundario == null) {
+      return new Prenda(this.tipoDePrenda, this.material, this.colorPrincipal);
     } else {
-      return new Prenda(tipoDePrenda, material, colorPrincipal, colorSecundario);
+      return new Prenda(this.tipoDePrenda, this.material, this.colorPrincipal, this.colorSecundario);
     }
   }
 
