@@ -6,7 +6,7 @@ import java.util.Objects;
 // considero que si en el creador de prenda uno no termina de settear los distintos atributos,
 // queda guardada la instancia en la que esta trabajando como un borrador.
 
-public class CreadorDePrenda {
+public class BorradorPrenda {
 
   private TipoDePrenda tipoDePrenda;
   private Material material;
