@@ -1,7 +1,6 @@
 package domain.ropa;
 
 import java.awt.*;
-import java.util.Objects;
 
 // considero que si en el creador de prenda uno no termina de settear los distintos atributos,
 // queda guardada la instancia en la que esta trabajando como un borrador.
@@ -13,32 +12,20 @@ public class BorradorPrenda {
   private Color colorPrincipal;
   private Color colorSecundario;
 
-  public void setTipoDePrenda(TipoDePrenda tipoDePrenda) {
+  public BorradorPrenda(TipoDePrenda tipoDePrenda) {
     this.tipoDePrenda = tipoDePrenda;
   }
 
   public void setMaterial(Material material) {
-    if (this.tipoEstaSeteado()) {
       this.material = material;
-    } else {
-      throw new TipodePrendaNoIngresado("No hay tipo de prenda");
-    }
   }
 
   public void setColorPrincipal(Color colorPrincipal) {
-    if (this.tipoEstaSeteado()) {
       this.colorPrincipal = colorPrincipal;
-    } else {
-      throw new TipodePrendaNoIngresado("No hay tipo de prenda");
-    }
   }
 
   public void setColorSecundario(Color colorSecundario) {
-    if (this.tipoEstaSeteado()) {
       this.colorSecundario = colorSecundario;
-    } else {
-      throw new TipodePrendaNoIngresado("No hay tipo de prenda");
-    }
   }
 
   public Prenda generarPrenda() {
@@ -46,16 +33,6 @@ public class BorradorPrenda {
       return new Prenda(this.tipoDePrenda, this.material, this.colorPrincipal);
     } else {
       return new Prenda(this.tipoDePrenda, this.material, this.colorPrincipal, this.colorSecundario);
-    }
-  }
-
-  private boolean tipoEstaSeteado() {
-    return !(this.tipoDePrenda == null);
-  }
-
-  private class TipodePrendaNoIngresado extends RuntimeException {
-    public TipodePrendaNoIngresado(String message) {
-      super(message);
     }
   }
 

@@ -19,5 +19,6 @@ public class TipoDePrenda {
   private TipoDePrenda ZAPATO = new TipoDePrenda(Categoria.CALZADO);
   private TipoDePrenda REMERA = new TipoDePrenda(Categoria.SUPERIOR);
   private TipoDePrenda PANTALON = new TipoDePrenda(Categoria.INFERIOR);
+  private TipoDePrenda CHOMBA = new TipoDePrenda(Categoria.SUPERIOR);
 
 }
