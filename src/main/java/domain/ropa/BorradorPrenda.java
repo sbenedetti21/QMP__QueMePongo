@@ -7,10 +7,11 @@ import java.awt.*;
 
 public class BorradorPrenda {
 
-  private TipoDePrenda tipoDePrenda;
+  private final TipoDePrenda tipoDePrenda;
   private Material material;
   private Color colorPrincipal;
   private Color colorSecundario;
+  private int temperaturaMaxima;
 
   public BorradorPrenda(TipoDePrenda tipoDePrenda) {
     this.tipoDePrenda = tipoDePrenda;
@@ -28,11 +29,15 @@ public class BorradorPrenda {
       this.colorSecundario = colorSecundario;
   }
 
+  public void setTemperaturaMaxima(int temperaturaMaxima) {
+    this.temperaturaMaxima = temperaturaMaxima;
+  }
+
   public Prenda generarPrenda() {
     if (this.colorSecundario == null) {
-      return new Prenda(this.tipoDePrenda, this.material, this.colorPrincipal);
+      return new Prenda(this.tipoDePrenda, this.material, this.colorPrincipal, this.temperaturaMaxima);
     } else {
-      return new Prenda(this.tipoDePrenda, this.material, this.colorPrincipal, this.colorSecundario);
+      return new Prenda(this.tipoDePrenda, this.material, this.colorPrincipal, this.temperaturaMaxima, this.colorSecundario);
     }
   }
 
