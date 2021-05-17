@@ -3,11 +3,11 @@ package domain.tiempo;
 import java.util.List;
 import java.util.Map;
 
-public class RegistroTiempo {
+public class RepositorioTiempo {
   private static AccuWeatherAPI apiClima = new AccuWeatherAPI();
-  private static RegistroTiempo INSTANCE = new RegistroTiempo();
+  private static RepositorioTiempo INSTANCE = new RepositorioTiempo();
 
-  public static RegistroTiempo getInstance() {
+  public static RepositorioTiempo getInstance() {
     return INSTANCE;
   }
 
