@@ -11,7 +11,7 @@ public class BorradorPrenda {
   private Material material;
   private Color colorPrincipal;
   private Color colorSecundario;
-  private int temperaturaMaxima;
+  private double temperaturaMaxima;
 
   public BorradorPrenda(TipoDePrenda tipoDePrenda) {
     this.tipoDePrenda = tipoDePrenda;
