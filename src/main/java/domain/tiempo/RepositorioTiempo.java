@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 public class RepositorioTiempo {
-  private static AccuWeatherAPI apiClima = new AccuWeatherAPI();
+  private static AccuWeatherAPI apiClima = new AccuWeatherAPI();  //TODO -> implemetnar adapter con interfaces que entiendan getTemperatura
   private static RepositorioTiempo INSTANCE = new RepositorioTiempo();
 
   public static RepositorioTiempo getInstance() {
@@ -24,7 +24,7 @@ public class RepositorioTiempo {
       case 17:
         return temperaturaValor;
       case 18:
-        return (temperaturaValor - 32) * 5/9;
+        return (temperaturaValor - 32.0) * 5.0/9.0;
       case 19:
         return temperaturaValor - 273.15;
     }
