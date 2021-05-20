@@ -12,9 +12,11 @@ public class RepositorioTiempo {
     return INSTANCE;
   }
 
-  public HashMap<String, Object> getTemperaturas() {
+  public double getTemperaturas() {
     List<Map<String, Object>> condicionesClimaticas = apiClima.getWeather("Buenos Aires, Argentina");
-    return (HashMap<String, Object>) condicionesClimaticas.get(0).get("Temperature");
+    HashMap<String, Object> temperatura = (HashMap<String, Object>) condicionesClimaticas.get(0).get("Temperature");
+    double temperaturaValor = (double) temperatura.get("Value");
+    return convertirTemperatura((int) temperatura.get("UnitType"), temperaturaValor);
   }
 
   public static double convertirTemperatura(int unitType, double temperaturaValor) {

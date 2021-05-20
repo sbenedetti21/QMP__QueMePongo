@@ -11,20 +11,16 @@ import java.util.List;
 public class Recomendador {
 
   public static Atuendo recomendarAtuendo() {
-    HashMap<String, Object> temperatura = RepositorioTiempo.getInstance().getTemperaturas();
-
-    double temperaturaValor = (double) temperatura.get("Value");
-    double temperaturaEnFarenheit = RepositorioTiempo.convertirTemperatura((int) temperatura.get("UnitType"), temperaturaValor);
-
-    return generarAtuendo(temperaturaEnFarenheit);
+    double temperatura = RepositorioTiempo.getInstance().getTemperaturas();
+    return generarAtuendo(temperatura);
   }
 
-  private static Atuendo generarAtuendo(double temperaturaEnFarenheit) {
+  private static Atuendo generarAtuendo(double temperaturaEnCelsius) {
     RepositorioPrendas repo = RepositorioPrendas.getInstance();
 
-    Prenda prendaSuperior = repo.getPrendaSuperiorPara(temperaturaEnFarenheit);
-    Prenda prendaInferior = repo.getPrendaInferiorPara(temperaturaEnFarenheit);
-    Prenda calzado = repo.getCalzadoPara(temperaturaEnFarenheit);
+    Prenda prendaSuperior = repo.getPrendaSuperiorPara(temperaturaEnCelsius);
+    Prenda prendaInferior = repo.getPrendaInferiorPara(temperaturaEnCelsius);
+    Prenda calzado = repo.getCalzadoPara(temperaturaEnCelsius);
     return new Atuendo(prendaSuperior, prendaInferior, calzado);
   }
 
