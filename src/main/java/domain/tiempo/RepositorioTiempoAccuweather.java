@@ -4,11 +4,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class RepositorioTiempo {
-  private static AccuWeatherAPI apiClima = new AccuWeatherAPI();  //TODO -> implemetnar adapter con interfaces que entiendan getTemperatura
-  private static RepositorioTiempo INSTANCE = new RepositorioTiempo();
+public class RepositorioTiempoAccuweather implements RepositorioTiempo {
+  private static AccuWeatherAPI apiClima = new AccuWeatherAPI();
+  private static RepositorioTiempoAccuweather INSTANCE = new RepositorioTiempoAccuweather();
 
-  public static RepositorioTiempo getInstance() {
+  public static RepositorioTiempoAccuweather getInstance() {
     return INSTANCE;
   }
 

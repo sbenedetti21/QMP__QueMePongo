@@ -3,15 +3,12 @@ package domain.recomendador;
 import domain.ropa.Atuendo;
 import domain.ropa.Prenda;
 import domain.ropa.RepositorioPrendas;
-import domain.tiempo.RepositorioTiempo;
-
-import java.util.HashMap;
-import java.util.List;
+import domain.tiempo.RepositorioTiempoAccuweather;
 
 public class Recomendador {
 
   public static Atuendo recomendarAtuendo() {
-    double temperatura = RepositorioTiempo.getInstance().getTemperaturas();
+    double temperatura = RepositorioTiempoAccuweather.getInstance().getTemperaturas();
     return generarAtuendo(temperatura);
   }
 
