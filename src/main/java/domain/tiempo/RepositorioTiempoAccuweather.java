@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class RepositorioTiempoAccuweather implements RepositorioTiempo {
+public class RepositorioTiempoAccuweather implements RepositorioTiempo {  // TODO -> hacer que se almacenen las respuestas por ciudad
   private static AccuWeatherAPI apiClima = new AccuWeatherAPI();
   private static RepositorioTiempoAccuweather INSTANCE = new RepositorioTiempoAccuweather();
 
