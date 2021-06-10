@@ -19,6 +19,10 @@ public class RepositorioTiempoAccuweather implements RepositorioTiempo {  // TOD
     return convertirTemperatura((int) temperatura.get("UnitType"), temperaturaValor);
   }
 
+  public List<Alerta> getAlertas() {
+    return apiClima.getAlerta();
+  }
+
   public static double convertirTemperatura(int unitType, double temperaturaValor) {
     switch (unitType) {
       case 17:
