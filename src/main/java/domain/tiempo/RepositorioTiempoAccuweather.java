@@ -20,7 +20,7 @@ public class RepositorioTiempoAccuweather implements RepositorioTiempo {  // TOD
   }
 
   public List<Alerta> getAlertas() {
-    return apiClima.getAlerta();
+    return apiClima.getAlerta(); //Habria que devolverlo como lista de alertas, no se bien como viene
   }
 
   public static double convertirTemperatura(int unitType, double temperaturaValor) {
